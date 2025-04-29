@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&family=Lora:ital@0;1&display=swap');
+
+@layer base {
+  :root {
+    /* Earth & Growth Color Palette */
+    --primary: 184 51% 34%; /* Deep Teal #2A7F85 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 96 29% 49%; /* Sage Green #7BA05B */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 14 53% 54%; /* Warm Terracotta #C66E4E */
+    --accent-foreground: 0 0% 100%;
+    --background: 48 46% 94%; /* Soft Cream #F7F4E9 */
+    --foreground: 0 0% 20%; /* Deep Charcoal #333333 */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --muted: 48 20% 90%;
+    --muted-foreground: 0 0% 45%;
+    --border: 48 10% 85%;
+    --input: 48 10% 85%;
+    --ring: 184 51% 34%;
+    
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 184 51% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 48 46% 94%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 48 10% 85%;
+    --sidebar-ring: 184 51% 34%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --chart-1: 184 51% 34%; /* Deep Teal */
+    --chart-2: 96 29% 49%; /* Sage Green */
+    --chart-3: 14 53% 54%; /* Warm Terracotta */
+    --chart-4: 48 46% 94%; /* Soft Cream */
+    --chart-5: 0 0% 20%; /* Deep Charcoal */
+  }
+  
+  .dark {
+    --primary: 184 51% 34%; /* Deep Teal #2A7F85 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 96 29% 49%; /* Sage Green #7BA05B */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 14 53% 54%; /* Warm Terracotta #C66E4E */
+    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 15%;
+    --foreground: 0 0% 95%;
+    
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 95%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 184 51% 34%;
+    
+    --sidebar-background: 0 0% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 184 51% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 30%;
+    --sidebar-ring: 184 51% 34%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --chart-1: 184 51% 34%; /* Deep Teal */
+    --chart-2: 96 29% 49%; /* Sage Green */
+    --chart-3: 14 53% 54%; /* Warm Terracotta */
+    --chart-4: 48 46% 94%; /* Soft Cream */
+    --chart-5: 0 0% 20%; /* Deep Charcoal */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    @apply text-primary mb-4;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  a {
+    @apply text-primary transition-colors duration-300;
+  }
+  a:hover {
+    @apply text-accent;
+  }
+  .accent-text {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    @apply text-secondary;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-block px-4 py-2 rounded-md font-medium transition-colors duration-300 text-center cursor-pointer font-montserrat;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90;
+  }
+  
+  .section {
+    @apply py-16;
+  }
+  
+  .section-title {
+    @apply text-center mb-12;
+  }
+  
+  .section-title h2 {
+    @apply relative inline-block pb-2;
+  }
+  
+  .section-title h2::after {
+    content: '';
+    @apply absolute w-1/2 h-1 bottom-0 left-1/4 bg-secondary;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300;
+  }
+  
+  .card:hover {
+    @apply transform -translate-y-1;
+  }
+}
